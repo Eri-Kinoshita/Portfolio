@@ -1,0 +1,26 @@
+// breakpoints
+$laptop:	73.125em; // 1170px
+$tablet:	48.000em; // 768px
+$mobile:    30.000em; // 480px
+
+// media queries -- PC first
+@mixin breakpoint($point) {
+  @if $point == laptop {
+    @media only screen and (max-width: $laptop) { @content ; }
+  }
+  @else if $point == tablet {
+    @media only screen and (max-width: $tablet) { @content ; }
+  }
+  @else if $point == mobile {
+    @media only screen and (max-width: $mobile) { @content ; }
+  }
+}
+
+// @mixin orientation($point) {
+//   @if $point == portrait {
+//     @media screen and (orientation: portrait) { @content ; }
+//   }
+//   @else if $point == landscape{
+//     @media screen and (orientation: landscape){ @content ; }
+//   }
+// }
