@@ -184,9 +184,9 @@ jQuery(document).ready(function($){
 	});
 
 	$('#contactForm').submit(function(event) {
-    event.preventDefault();
-    var $form = $('#contactForm');
-    var $button = $form.find('button');
+	    event.preventDefault();
+	    var $form = $('#contactForm');
+	    var $button = $form.find('button');
 
 	 	if( $("#name").val() && $("#email").val() && $("#comments").val() ){
 	    // if(!$("#email").val().match("^[0-9A-Za-z._\-]+@[0-9A-Za-z.\-]+$")){
@@ -198,8 +198,8 @@ jQuery(document).ready(function($){
 		        url: $form.attr('action'),
 		        type: $form.attr('method'),
 		        data: $form.serialize()
-		            + '&delay=1',  // （デモ用に入力値をちょいと操作します）
-		        timeout: 10000,  // 単位はミリ秒
+		            + '&delay=1',
+		        timeout: 10000,
 
 		        // 送信前
 		        beforeSend: function(xhr, settings) {

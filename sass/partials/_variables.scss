@@ -5,20 +5,19 @@ $color-2: #fefefe; // White
 $color-3: #77071a; // main color red
 $color-4: #e4b162; // Equator
 
-$color-5: #131519; // Woodsmoke
-$color-6: #ffffff; // White
 $mainR: #77071a;
 $mainB: #353434;
 // fonts
+$color-pro: #42a56a;
+$color-about: #652e70;
+$color-index: #a0375f;
 
 $primary-font: "freight-text-pro", "Times New Roman", serif;
+$secondly-font: "allumi-std",sans-serif;
 
-// // side navigation size
+// Contact form
 
-// $nav-width-small: 74px;
-// $nav-width-normal: 94px;
-// $loading-bar-width: 4px;
+$contact-form_W : 720px;
+$division-line_W : 40px;
 
-// //animation
-
-// $animation-duration: 0.5s;
+$aboutLeft: 350px;

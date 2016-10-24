@@ -10,23 +10,23 @@ let gulp = require("gulp");
 //-------------------------------
 // .scss から .css へ自動変換
 //-------------------------------
-// var sass = require("gulp-sass");
-// gulp.task("sass", function() {
-//     gulp.src("sass/**/*scss")
-//         .pipe(sass())
-//         .pipe(gulp.dest("css"));
-// });
+var sass = require("gulp-sass");
+gulp.task("sass", function() {
+    gulp.src("sass/**/*scss")
+        .pipe(sass())
+        .pipe(gulp.dest("css"));
+});
 //-------------------------------
 // プレフィックス付与
 //-------------------------------
-// var autoprefixer = require("gulp-autoprefixer");
+var autoprefixer = require("gulp-autoprefixer");
  
-// gulp.task("sass", function() {
-//     gulp.src("sass/**/*scss")
-//         .pipe(sass())
-//         .pipe(autoprefixer())
-//         .pipe(gulp.dest("css"));
-// });
+gulp.task("sass", function() {
+    gulp.src("sass/**/*scss")
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest("css"));
+});
 
 //-------------------
 // js圧縮自動化
@@ -102,15 +102,15 @@ gulp.task('watch', function() {
 gulp.task('default', ['cssmin','watch']);
 
 
-// //---------------------------------------
-// // 画像圧縮
-// //---------------------------------------
-// // const imagemin = require('gulp-imagemin');
-// // gulp.task('imagemin', () =>
-// //   gulp.src('img/*')
-// //     .pipe(imagemin())
-// //     .pipe(gulp.dest('img/img_min'))
-// // );
+//---------------------------------------
+// 画像圧縮
+//---------------------------------------
+const imagemin = require('gulp-imagemin');
+gulp.task('imagemin', () =>
+  gulp.src('img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('img/img_min'))
+);
 
 // //-------------------------------------------
 // // エラーでもwatchを止めない

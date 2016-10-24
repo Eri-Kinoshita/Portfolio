@@ -1,1 +1,0 @@
-$(function(){console.log("comon");var e=$(window),o=(e.height(),document.getElementById("corderTop")),n=[" thinking.","simple designs.","programming ideas."];typeCoder(o,0,0,n)});

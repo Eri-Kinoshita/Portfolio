@@ -1,6 +1,5 @@
 @import 'partials/bourbon/bourbon';
 @import 'partials/variables';
-// @import 'partials/mixins';
 @import 'partials/layout';
 @import 'partials/normalize';
 
@@ -117,19 +116,6 @@ Loader animation
 .projects .loader__screen:nth-of-type(2){
   background: #aa7db2;
 }
-
-// @keyframes apperLoad{
-//   from{left: -100%; }
-//   to{ left: 0; }
-// }
-// @keyframes apperLoad{
-//   from{left: -100%; }
-//   to{ left: 0; }
-// }
-// @keyframes apperLoad{
-//   from{transform: scaleX(0); }
-//   to{ transform: scaleX(1); }
-// }
 .loader__line{
   // border: none;
   border-top: solid 8px #fefefe;
@@ -465,7 +451,6 @@ Main content
     object-fit: cover;
   }
 }
-
 .main__filter{
   position: fixed;
   top: 0;
@@ -475,7 +460,6 @@ Main content
   @include background(linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.28)) left repeat);
   @include background(linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.28)) left repeat, radial-gradient(rgba(0,0,0,0.1), rgba(0,0,0,.01)));
 }
-
 .title-main{
   position: relative;
   margin: 0 auto;
@@ -498,7 +482,6 @@ Main content
     }
   }
 }
-
 .title-main__cursor{
   border-right: .1em solid transparent;
   animation: cursor 1s infinite;
@@ -546,7 +529,6 @@ Main content
 .btn--red{
   background: linear-gradient(rgba(165,30,60,.65) 0,$color-3 100%);
 }
-
 .btn-main{
   margin-top: 48px;
 }
@@ -664,8 +646,6 @@ Main content
 .sns-main__item.dribbble:hover{
   background: linear-gradient(rgba(234,76,137,.2), rgba(234,76,137,1));
 }
-$contact-form_W : 720px;
-$division-line_W : 40px;
 .contact{
   display: none;
   position:fixed;
@@ -750,7 +730,7 @@ $division-line_W : 40px;
     left: 42px;
     text-align: center;
     p{
-      font-family: "allumi-std",sans-serif;
+      font-family: $secondly-font;
       font-size: 3.2rem;
       line-height: 5.2rem;
       .fa{
@@ -761,13 +741,13 @@ $division-line_W : 40px;
   }
 }
 .projects .result__msg p{
-  color: #42a56a;
+  color: $color-pro;
 }
 .about .result__msg p{
-  color: #652e70;
+  color: $color-about;
 }
 .index .result__msg p{
-  color: #a0375f;
+  color: $color-index;
 }
 .contact__form{
   position: relative;
@@ -903,17 +883,17 @@ $division-line_W : 40px;
   &__title {
     border-bottom: 2px dotted #505050;
     margin-bottom: 10px;
-    visibility: hidden;
+    opacity: 0;
   }
   &__title h1{
-    font-family: "allumi-std",sans-serif;
+    font-family: $secondly-font;
     // font-weight: bold;
     margin: 0;
     font-size: 4.8rem;
     letter-spacing: .3125rem;
   }
    &__title h3{
-    font-family: "allumi-std",sans-serif;
+    font-family: $secondly-font;
     font-size: 2.4rem;
     letter-spacing: .134rem;
     @include breakpoint(mobile){
@@ -926,7 +906,7 @@ $division-line_W : 40px;
     letter-spacing: .124rem;
     line-height: 2.6rem;
     color: #fff;
-    visibility: hidden;
+    opacity: 0;
     @include breakpoint(mobile){
       margin-right: 0;
     }
@@ -942,13 +922,13 @@ $division-line_W : 40px;
 }
 .fadeInDown {
  animation-fill-mode:both;
- animation-duration: .52s;
+ animation-duration: 1.32s;
  animation-name: fadeInDown !important;
- visibility: visible !important;
+ display: block!important;
 }
 
 @keyframes fadeInDown {
- 0% { opacity: 0; transform: translateY(20px); color: #fff;}
+ 0% { opacity: 0; transform: translateY(20px); color: #fff; }
  100% { opacity: 1; transform: translateY(0); color: #333; }
 }
 .en,.jp{
@@ -957,11 +937,6 @@ $division-line_W : 40px;
 .en.visible,
 .jp.visible{
   display: block!important;
-  animation-fill-mode:both;
-  animation-duration: .52s;
-   animation-name: fadeInDown;
-   // animation-delay: .36s;
-   // visibility: visible !important;
 }
 .lang__btn{
   padding-left: 10px!important;
@@ -1010,7 +985,6 @@ $division-line_W : 40px;
 @keyframes leftIn{
   100%{ left: 0;}
 }
-$aboutLeft: 350px;
 
 .about-left{
   position: fixed;
@@ -1073,7 +1047,7 @@ $aboutLeft: 350px;
       font-size: 1.2rem;
       line-height: 2rem;
       color: $color-2;
-      font-family: "allumi-std",sans-serif;
+      font-family: $secondly-font;
       @include breakpoint(desktop){
        font-size: 1rem;
        line-height: 1.6rem;
@@ -1244,46 +1218,9 @@ $aboutLeft: 350px;
   transition-delay: 0;
 }
 
-// // /*------------------------------
-// //       Skill area
-// // ------------------------------*/
-// // .skill__wrap{
-// //   position: relative;
-// //   width: 100%;
-// // }
-// // .skilltitle{
-// //   &__wrap{
-// //     position: relative;
-// //     top: 100px;
-// //     left: 50px;
-// //     width: 45%;
-// //     height: 350px;
-// //     border-image: url(../img/gold.jpg) 15 round;
-// //     border-style:solid;
-// //     border-width:10px;
-// //     z-index: 2;
-// //     @include breakpoint(mobile){
-// //       width: 65%;
-// //     }
-// //   }
-// //   &__content{
-// //     width: 90%;
-// //     position: relative;
-// //     top: 60px;
-// //     left: 10%;
-// //     &__wrap{
-// //       padding: 0 10px;
-// //     }
-// //   }
-// // }
-
-// // .box__shadow{
-// //   box-shadow: 0 3px 6px rgba(1,16,22,0.16),0 3px 6px rgba(1,16,22,0.23);
-// //   transition: all .2s ease-in-out;
-// //   &:hover{
-// //     box-shadow: 0 5px 8px rgba(1,16,22,0.16),0 5px 8px rgba(1,16,22,0.36);
-// //   }
-// // }
+// /*------------------------------
+//       Skill area
+// ------------------------------*/
 
 .pie-chart__wrap{
   margin: 0 20px;
@@ -1296,28 +1233,10 @@ $aboutLeft: 350px;
 .pie-chart{
   height: 200px;
 }
-.svg-graph .vertical-row{
-  // @include breakpoint(tablet){
-  //   display: block;
-  // }
-  // @include breakpoint(mobile){
-  //   display: block;
-  // }
-}
+
 .bar-graph__wrap{
   width: 50%;
   text-align: center;
-  // @include orientation(portrait){
-  //   margin: 0 auto;
-  // }
-  //  @include breakpoint(tablet){
-  //   width: 100%;
-  //   margin: 0 auto 25px;
-  // }
-  // @include breakpoint(mobile){
-  //   width: 100%;
-  //   margin: 0 auto 15px;
-  // }
 }
 .bar-graph{
   width: 90%;
@@ -1600,28 +1519,31 @@ html[xmlns*=""]:root .project-title p{
 }
 .scLmove{
   animation-name: fadeInLeft;
-  animation-duration: 700ms;
+  animation-duration: .72s;
   animation-fill-mode: both;
 }
 @keyframes fadeInLeft{
-  from{
+  0%{
     opacity: 0;
-    transform: translate(-500px, 300px);
+    transform: translate(-200px, 200px);
   }
-  to{
+  50%{
+    opacity: .3;
+  }
+  100%{
     opacity: 1;
     transform: translate(0,0);
   }
 }
 .scRmove{
   animation-name: fadeInRight;
-  animation-duration: 700ms;
+  animation-duration: .72s;
   animation-fill-mode: both;
 }
 @keyframes fadeInRight{
   from{
     opacity: 0;
-    transform: translate(500px, 300px);
+    transform: translate(200px, 200px);
   }
   to{
     opacity: 1;
@@ -1755,7 +1677,7 @@ html[xmlns*=""]:root .project-title p{
       color: $color-2;
     }
     p{
-      font-family: "allumi-std",sans-serif;
+      font-family: $secondly-font;
       font-weight: 100;
       color: $color-2;
       cursor: pointer;
