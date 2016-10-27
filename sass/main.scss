@@ -640,8 +640,8 @@ Main content
     linear-gradient(135deg,rgba(35, 75, 215,.5) 12%, rgba(195, 60, 190,.5) 58%);
 }
 
-.sns-main__item.pinterest:hover{
-  background: linear-gradient(rgba(179,18,23,.2), rgba(179,18,23,1));
+.sns-main__item.twitter:hover{
+  background: linear-gradient(rgba(15,223,248,.2), rgba(15,223,248,1));
 }
 .sns-main__item.dribbble:hover{
   background: linear-gradient(rgba(234,76,137,.2), rgba(234,76,137,1));
@@ -847,12 +847,9 @@ Main content
 .about-right{
   position: relative;
   top: 0;
-  left: 350px;
-  width: calc(100% - 350px);
-  @include breakpoint(laptop){
-    left: 250px;
-    width: calc(100% - 250px);
-  }
+  left: 0;
+  left: 30%;
+  width: 70%;
   @include breakpoint(mobile){
     width: 100%;
     left: 0;
@@ -863,6 +860,7 @@ Main content
   top: -2rem;
   left: 0;
   z-index: -1;
+  display: none;
   p{
     font-size: 11rem;
     font-weight: bold;
@@ -879,7 +877,7 @@ Main content
 .article-list{
   margin: 0 auto;
   width: 90%;
-  max-width: 720px;
+  max-width: 1000px;
   &__title {
     border-bottom: 2px dotted #505050;
     margin-bottom: 10px;
@@ -954,15 +952,23 @@ Main content
     padding: 0 10px;
   }
   &__bar{
+    text-align: center;
     font-size: 3.4rem;
     position: absolute;
+    z-index: -1;
     top: -.35rem;
-    left: calc( 50% - 1.5rem );
-    transition: .2s ease-in-out;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(15deg);
   }
 }
+.lang__btn.en_on .lang__btn__bar{
+  transform: rotate(15deg);
+  transition: .2s ease-in-out;
+}
 .lang__btn.jp_on .lang__btn__bar{
-  transform: rotate(-30deg);
+  transform: rotate(-15deg);
   transition: .2s ease-in-out;
 }
 .lang__btn.en_on{
@@ -979,6 +985,11 @@ Main content
     cursor: pointer;
   }
 }
+.about .lang__btn p,
+.projects .lang__btn p{
+  border: none;
+}
+
 .nav.fixed .lang__btn p{
   border: none;
 }
@@ -991,15 +1002,12 @@ Main content
   overflow: hidden;
   top: 0;
   left: 0;
-  width: 350px;
+  width: 30%;
   height: 100vh;
   background-image: url(../img/instagram/pic01.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  @include breakpoint(laptop){
-    width: 250px;
-  }
   @include breakpoint(mobile){
     display: none;
   }
@@ -1035,8 +1043,8 @@ Main content
     bottom: 0;
     margin: auto;
     padding: 0;
-    width: 150px;
-    height: 250px;
+    width: 10rem;
+    height: calc( 12rem + 60px );
   }
   li{
     margin: 5px;
@@ -1044,6 +1052,7 @@ Main content
     position: relative;
     text-transform: uppercase;
     a{
+      white-space: nowrap;
       font-size: 1.2rem;
       line-height: 2rem;
       color: $color-2;
@@ -1403,7 +1412,6 @@ Main content
   margin: auto;
   height: auto;
   overflow: hidden;
-  background-color: rgba(173,4,48,.01);
   @include breakpoint(tablet){
     width: 90%;
     margin: 5px auto;
