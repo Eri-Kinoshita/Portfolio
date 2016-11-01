@@ -582,8 +582,8 @@ Navigation
       width: 85%; }
   .nav__global li:nth-child(1) {
     margin-right: auto;
-    padding: 0;
-    margin-left: 24px; }
+    margin-left: 24px;
+    padding: 0; }
   .nav__global a, .nav__global li {
     display: block;
     font-size: 2rem; }
@@ -605,8 +605,9 @@ Navigation
     width: 100vw;
     height: 100vh;
     text-align: center;
-    background-color: rgba(186, 108, 134, 0.84);
+    background-color: #333;
     transform: translateY(-100%);
+    overflow: hidden;
     transition: .3s ease-out; }
     .nav__global .logo__wrap {
       display: none; }
@@ -615,25 +616,33 @@ Navigation
       margin-top: 100px; }
     .nav__global li {
       display: block;
-      font-size: 2.4rem;
-      line-height: 100px; }
+      position: relative;
+      width: 100%;
+      height: 30px;
+      padding: 0;
+      margin: 15px 0;
+      border-box: box-sizing;
+      font-size: 2rem;
+      line-height: 30px; }
       .nav__global li:hover .nav__line {
         transition: .4s;
-        width: 65%; }
+        width: 25px; }
     .nav__global a {
-      font-size: 2.4rem;
-      line-height: 100px; }
+      display: block;
+      font-size: 2rem; }
     .nav__global .nav__line {
       position: absolute;
-      top: 50%;
+      top: 14px;
       left: 100px;
       width: 16px;
       height: 50%;
       transition: .4s;
-      border-top: 1px solid #fefefe; } }
-.nav__txt.selected .nav__line {
-  width: 88px; }
+      border-top: 1px solid #fefefe; }
 
+  .lang__btn {
+    margin-top: 100px !important; }
+    .lang__btn p {
+      font-size: 1.4rem; } }
 .nav__line {
   position: absolute;
   top: 50%;

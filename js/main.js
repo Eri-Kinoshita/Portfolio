@@ -229,6 +229,16 @@ jQuery(document).ready(function($){
 		}
 	});
 
+
+  // Nav Toggle Button
+   var $navOpen = $('.nav');
+  $('#navToggle').on('click',function(){
+      $navOpen.toggleClass('open');
+console.log("aaa");
+  });
+  $('.nav__global').on('click',function(){
+      $navOpen.removeClass('open');
+  });
 });
 
 
