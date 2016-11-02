@@ -1669,14 +1669,12 @@ html[xmlns*=""]:root .project-title p{
           Footer
 ------------------------------*/
 .about .footer{
-  width: calc(100% - 350px);
-  margin-left: 350px;
-  @include breakpoint(laptop){
-    width: calc(100% - 250px);
-    margin-left: 250px;
-  }
+  position: relative;
+  width: 70%;
+  left: 30%;
   @include breakpoint(mobile){
     width: 100%;
+    left: 0;
     margin-left: 0;
   }
 }

@@ -1830,15 +1830,13 @@ html[xmlns*=""]:root .project-title p {
           Footer
 ------------------------------*/
 .about .footer {
-  width: calc(100% - 350px);
-  margin-left: 350px; }
-  @media only screen and (max-width: 73.125em) {
-    .about .footer {
-      width: calc(100% - 250px);
-      margin-left: 250px; } }
+  position: relative;
+  width: 70%;
+  left: 30%; }
   @media only screen and (max-width: 30em) {
     .about .footer {
       width: 100%;
+      left: 0;
       margin-left: 0; } }
 
 .footer {
