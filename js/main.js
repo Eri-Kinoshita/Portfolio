@@ -24,9 +24,44 @@
 		stopload();
 	}, false);
 
+
 /*----------------------------------
-		Type corder
+    language switch
 ------------------------------------*/
+  var nav = $('#primeNav');
+  initialaetLang();
+  function initialaetLang(){
+    var langBtn = ["en_on","jp_on"];
+    for( var i=0; i < langBtn.length; i++ ){
+      var lang_on = $('.lang__btn').hasClass(langBtn[i]);
+      if(lang_on){
+        showLang(langBtn[i].split('_')[0]);
+      }
+    }
+  }
+  function showLang(lang){
+   var langArr = ["en","jp"];
+   for( var i=0; i < langArr.length; i++ ){
+     if( lang == langArr[i] ){
+       $('.' + langArr[i]).addClass('visible');
+       $('.lang__btn').addClass(langArr[i]+'_on');
+     }else{
+       $('.' + langArr[i]).removeClass('visible');
+       $('.lang__btn').removeClass(langArr[i]+'_on');
+     }
+   }
+  }
+  nav.on("click",".lang__btn--jp", function() {
+    showLang('jp');
+  });
+  nav.on("click",".lang__btn--en",function() {
+    showLang('en');
+  });
+
+  
+  /*----------------------------------
+		Type corder
+	------------------------------------*/
   function typeCoder(id, ele, ele_len, typeStrings){
     var typeArr = new Array();
 
@@ -90,43 +125,6 @@ $(function() {
       }
   });
 });
-
-
-/*----------------------------------
-    language switch
-------------------------------------*/
-  var nav = $('#primeNav');
-  initialaetLang();
-  function initialaetLang(){
-    var langBtn = ["en_on","jp_on"];
-    for( var i=0; i < langBtn.length; i++ ){
-      var lang_on = $('.lang__btn').hasClass(langBtn[i]);
-      if(lang_on){
-        showLang(langBtn[i].split('_')[0]);
-      }
-    }
-  }
-  function showLang(lang){
-   var langArr = ["en","jp"];
-   for( var i=0; i < langArr.length; i++ ){
-     if( lang == langArr[i] ){
-       $('.' + langArr[i]).addClass('visible');
-       $('.lang__btn').addClass(langArr[i]+'_on');
-     }else{
-       $('.' + langArr[i]).removeClass('visible');
-       $('.lang__btn').removeClass(langArr[i]+'_on');
-     }
-   }
-  }
-  nav.on("click",".lang__btn--jp", function() {
-    showLang('jp');
-  });
-  nav.on("click",".lang__btn--en",function() {
-    showLang('en');
-  });
-
-
-
 //画像などを除いて、HTML=DOMの読み込みが終わったら実行
 jQuery(document).ready(function($){
 	var isAnimating = false,
@@ -346,6 +344,7 @@ jQuery(document).ready(function($){
 		$('.nav__global').on('click',function(){
 		$navOpen.removeClass('open');
 	});
+
 });
 
 

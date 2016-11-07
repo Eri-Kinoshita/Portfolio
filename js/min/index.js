@@ -1,1 +1,0 @@
-$(function(){var e=$(window),i=(e.height(),document.getElementById("corderTop")),n=[" thinking.","simple designs.","programming ideas."];typeCoder(i,0,0,n)});
