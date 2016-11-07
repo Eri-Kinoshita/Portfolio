@@ -64,10 +64,6 @@ $(function() {
           // $logo.removeClass('logo-toggle');
       }
   });
-  // Nav Toggle Button
-  $('#navToggle').click(function(){
-      $navOpen.toggleClass('open');
-  });
 });
 
 
